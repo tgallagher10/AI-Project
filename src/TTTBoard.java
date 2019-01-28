@@ -5,6 +5,7 @@ public class TTTBoard extends Board {
     // Constants
     public static final int ROWS = 3;
     public static final int COLS = 3;
+    private String turn="X";
 
     /**
      * Constructs a 3x3 board for Tic Tac Toe and initializes
@@ -37,6 +38,16 @@ public class TTTBoard extends Board {
                     theBoard[r][c] = player;
             }
         }
+        if (turn.equals("X")){
+            turn="O";
+        }
+        else{
+            turn="X";
+        }
+    }
+
+    public String getTurn(){
+        return turn;
     }
 
     /**
