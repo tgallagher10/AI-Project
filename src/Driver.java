@@ -5,5 +5,8 @@ public class Driver {
         System.out.println("test");
         System.out.println("name jeff");
         System.out.println("aaaaa");
+
+        TTTBoard board=new TTTBoard();
+        System.out.println(board.toString());
     }
 }
