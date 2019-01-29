@@ -9,8 +9,15 @@ public class Driver {
             board = new TTTBoard();
     }
 
-
-        System.out.println(board.toString());
+        while (board.isGameOver()==false){
+            System.out.println(board.toString());
+            String turn=board.getTurn();
+            System.out.println("Player "+ turn+" where would you like to move:");
+            board.placePiece(in.nextLine(), board.getTurn());
+            if (board.isWinner(turn)){
+                System.out.println("Player "+ turn+" wins!");
+            }
+        }
 
     }
 }

@@ -105,6 +105,8 @@ public abstract class Board<E extends Comparable<E>> {
         return false;
     }
 
+    public abstract String getTurn();
+
     /**
      * If there is a streak that is count long in NE diagonal starting
      * at the given row and col position, the value that makes the first streak
