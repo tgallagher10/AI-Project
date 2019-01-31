@@ -13,7 +13,7 @@ public class Driver {
         System.out.println("Select your game (1-6):");
 
         Board board = null;
-        if(in.next().equals("1")){
+        if(in.nextLine().equals("1")){
             board = new TTTBoard();
     }
 
@@ -21,7 +21,9 @@ public class Driver {
             System.out.println(board.toString());
             String turn=board.getTurn();
             System.out.println("Player "+ turn+" where would you like to move:");
-            board.placePiece(in.nextLine(), board.getTurn());
+            String num=in.nextLine();
+            System.out.println(num);
+            board.placePiece(num, board.getTurn());
             if (board.isWinner(turn)){
                 System.out.println("Player "+ turn+" wins!");
             }
