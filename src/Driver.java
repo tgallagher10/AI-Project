@@ -17,6 +17,9 @@ public class Driver {
             if (board.isWinner(turn)){
                 System.out.println("Player "+ turn+" wins!");
             }
+            else if (board.getEmptyLocs().size()==0){
+                System.out.println("Cats Game");
+            }
         }
 
     }
