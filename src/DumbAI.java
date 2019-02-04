@@ -7,4 +7,16 @@ public class DumbAI extends Player {
     public String getMove(Board board){
         
     }
+
+
+
+
+
+    private boolean isColgap (Board board){}
+
+
+    private boolean isRowgap( Board board){}
+
+
+    private boolean isDiaggap(Board board){}
 }
