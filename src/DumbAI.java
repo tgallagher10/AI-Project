@@ -6,6 +6,7 @@ public class DumbAI extends Player {
     public DumbAI(String inName){
         super (inName);
     }
+
     public String getMove(Board board){
         ArrayList<String> spots=new ArrayList<>();
         spots=board.getEmptyLocs();
@@ -16,6 +17,26 @@ public class DumbAI extends Player {
             }
             else{
                 board.retractPiece(spots.get(i));
+            }
+        }
+
+        for (int i=0; i<3; i++){
+            if (board.streakInCol(i,"O",2)){
+                if (spots.contains(board.get(0,i))){
+                    return spots.get(spots.indexOf(board.get(0,i)));
+                }
+                else{
+                    return spots.get(spots.indexOf(board.get(2,i)));
+                }
+            }
+
+            else if (board.streakInRow(i,"O", 2)){
+                if (spots.contains(board.get(i,0))){
+                    return spots.get(spots.indexOf(board.get(i,0)));
+                }
+                else{
+                    return spots.get(spots.indexOf(board.get(i,2)));
+                }
             }
         }
     }
