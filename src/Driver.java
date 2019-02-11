@@ -18,12 +18,10 @@ public class Driver {
     }
 
         while (board.isGameOver()==false){
-            System.out.println(board.toString());
             String turn=board.getTurn();
-            System.out.println("Player "+ turn+" where would you like to move:");
-            String num=in.nextLine();
-            System.out.println(num);
+
             board.placePiece(num, board.getTurn());
+
             if (board.isWinner(turn)){
                 System.out.println("Player "+ turn+" wins!");
             }
