@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class DumbAI extends Player {
 
@@ -32,27 +33,13 @@ public class DumbAI extends Player {
             }
         }
 
+        Random r=new Random();
+
+        int index=r.nextInt(spots.size());
+
+        return spots.get(index);
 
     }
 
 
-
-    private ArrayList<Integer> isColgap (Board board){}
-
-
-    private ArrayList<Integer> isRowgap(Board board){}
-
-
-    private boolean isDiaggap(Board board){
-       // ArrayList<Integer> location=new ArrayList<>();
-        if (board.get(0,0).equals(board.get(2,2)) && board.getEmptyLocs().contains("5")){
-            return true;
-        }
-
-        else if (board.get(0,2).equals(board.get(2,0)) && board.getEmptyLocs().contains("5")){
-            return true;
-        }
-
-        return false;
-    }
 }
