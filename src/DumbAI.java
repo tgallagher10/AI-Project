@@ -13,10 +13,22 @@ public class DumbAI extends Player {
         for (int i=0; i<spots.size(); i++){
             board.placePiece(spots.get(i), "X");
             if (board.isWinner("X")){
+                board.retractPiece(spots.get(i));
                 return spots.get(i);
             }
             else{
                 board.retractPiece(spots.get(i));
+            }
+        }
+
+        for (int j=0; j<spots.size(); j++){
+            board.placePiece(spots.get(j), "O");
+            if (board.isWinner("O")){
+                board.retractPiece(spots.get(j));
+                return spots.get(j);
+            }
+            else{
+                board.retractPiece(spots.get(j));
             }
         }
 
