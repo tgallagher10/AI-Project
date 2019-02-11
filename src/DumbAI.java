@@ -20,25 +20,7 @@ public class DumbAI extends Player {
             }
         }
 
-        for (int i=0; i<3; i++){
-            if (board.streakInCol(i,"O",2)){
-                if (spots.contains(board.get(0,i))){
-                    return spots.get(spots.indexOf(board.get(0,i)));
-                }
-                else{
-                    return spots.get(spots.indexOf(board.get(2,i)));
-                }
-            }
 
-            else if (board.streakInRow(i,"O", 2)){
-                if (spots.contains(board.get(i,0))){
-                    return spots.get(spots.indexOf(board.get(i,0)));
-                }
-                else{
-                    return spots.get(spots.indexOf(board.get(i,2)));
-                }
-            }
-        }
     }
 
 
@@ -49,16 +31,16 @@ public class DumbAI extends Player {
     private ArrayList<Integer> isRowgap(Board board){}
 
 
-    private ArrayList<Integer> isDiaggap(Board board){
-        ArrayList<Integer> location=new ArrayList<>();
+    private boolean isDiaggap(Board board){
+       // ArrayList<Integer> location=new ArrayList<>();
         if (board.get(0,0).equals(board.get(2,2)) && board.getEmptyLocs().contains("5")){
-            location.add(5);
+            return true;
         }
 
         else if (board.get(0,2).equals(board.get(2,0)) && board.getEmptyLocs().contains("5")){
-            location.add(5);
+            return true;
         }
 
-        return location;
+        return false;
     }
 }
