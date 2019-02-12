@@ -13,14 +13,31 @@ public class Driver {
         System.out.println("Select your game (1-6):");
 
         Board board = null;
-        if(in.nextLine().equals("1")){
+        Player p1=null;
+        Player p2=null;
+        int ans=in.nextInt();
+        in.nextLine();
+        if(ans<4){
             board = new TTTBoard();
-    }
+            if (ans==1){
+                p1=new HumanTTT("X");
+                p2=new HumanTTT("O");
+            }
+            else if (ans==2){
+                p1=new DumbAI("X");
+                p2=new HumanTTT("O");
+            }
+        }
 
         while (board.isGameOver()==false){
             String turn=board.getTurn();
 
-            board.placePiece(num, board.getTurn());
+            if (turn.equals("X")){
+                board.placePiece(p1.getMove(board), board.getTurn());
+            }
+
+            if (turn.)
+
 
             if (board.isWinner(turn)){
                 System.out.println("Player "+ turn+" wins!");
