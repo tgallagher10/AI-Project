@@ -65,6 +65,13 @@ public class TTTBoard extends Board {
                 currentLoc++;
             }
         }
+
+        if (turn.equals("X")){
+            turn="O";
+        }
+        else if (turn.equals("O")){
+            turn="X";
+        }
     }
 
     /**
