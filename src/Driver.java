@@ -27,6 +27,12 @@ public class Driver {
                 p1=new DumbAI("X");
                 p2=new HumanTTT("O");
             }
+
+            else if(ans==3){
+                p1=new TTTPlayerProAI("X");
+                p2=new HumanTTT("O");
+
+            }
         }
 
         while (board.isGameOver()==false){
