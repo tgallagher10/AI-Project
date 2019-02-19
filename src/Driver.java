@@ -34,6 +34,15 @@ public class Driver {
 
             }
         }
+        else{
+            board = new Connect4Board();
+            System.out.println(board.toString());
+            }
+
+
+
+
+
 
         while (board.isGameOver()==false){
             String turn=board.getTurn();
