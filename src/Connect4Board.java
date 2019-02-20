@@ -25,10 +25,12 @@ public class Connect4Board extends Board {
      * @param player the player making the move
      */
     public void placePiece(String loc, String player) {
+        int col = Integer.parseInt(loc);
         for (int r = 0; r < ROWS; r++) {
-            for (int c = 0; c < COLS; c++) {
-                if (theBoard[r][c].equals(loc))
-                    theBoard[r][c] = player;
+            //possibly not working because the "-" might not be exactly what's on the board
+            if(theBoard[r][col].equals("-")){
+                theBoard[r][col] = player;
+                break;
             }
         }
         if (turn.equals("R")){
