@@ -37,6 +37,10 @@ public class Driver {
         else{
             board = new Connect4Board();
             System.out.println(board.toString());
+            if (ans==4){
+                p1=new HumanC4("R");
+                p2=new HumanC4("Y");
+            }
             }
 
 
