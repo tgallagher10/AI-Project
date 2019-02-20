@@ -51,11 +51,11 @@ public class Driver {
         while (board.isGameOver()==false){
             String turn=board.getTurn();
 
-            if (turn.equals("X")){
+            if (turn.equals("X") || turn.equals("R")){
                 board.placePiece(p1.getMove(board), board.getTurn());
             }
 
-            if (turn.equals("O")){
+            if (turn.equals("O") || turn.equals("Y")){
                 board.placePiece(p2.getMove(board), board.getTurn());
             }
 

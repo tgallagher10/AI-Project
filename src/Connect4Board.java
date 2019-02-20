@@ -98,8 +98,22 @@ public class Connect4Board extends Board {
                 return true;
         }
 
-        if(streakInNorthEastDiag(2, 0, player, 3) || streakInSouthEastDiag(0, 0, player, 3))
-            return true;
+        for (int c=0; c<4; c++){
+            for (int r=0; r<3; r++){
+                if (streakInSouthEastDiag(r,c,player, 4)){
+                    return true;
+                }
+            }
+        }
+
+        for (int c=3; c<7; c++){
+            for (int r=5; r>2; r--){
+                if (streakInNorthEastDiag(r,c,player,4)){
+                    return true;
+                }
+            }
+        }
+
 
         return false;
     }
