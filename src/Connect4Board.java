@@ -11,18 +11,9 @@ public class Connect4Board extends Board {
     public Connect4Board() {
         super(ROWS, COLS);
         for (int r = 0; r < ROWS; r++) {
-            if(r == 0) {
-                int count = 1;
-                for (int i = 0; i < COLS; i++){
-                    set(r, i, "" + count);
-                    count++;
-            }
-
-            }
-            else {
                 for (int c = 0; c < COLS; c++) {
                     set(r, c, "" + '-');
-                }
+
             }
         }
     }
@@ -122,6 +113,23 @@ public class Connect4Board extends Board {
         else
             return false;
 
+    }
+
+    public String toString(){
+        String toReturn = "";
+
+        System.out.println("1234567");
+
+        for(int r = 0; r < theBoard.length; r++) {
+            for(int c = 0; c < theBoard[0].length; c++) {
+
+                toReturn += theBoard[r][c];
+            }
+
+            toReturn += "\n";
+        }
+
+        return toReturn;
     }
 
 }
