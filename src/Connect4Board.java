@@ -40,8 +40,8 @@ public class Connect4Board extends Board {
                     theBoard[r][c] = player;
             }
         }
-        if (turn.equals("X")){
-            turn="O";
+        if (turn.equals("R")){
+            turn="Y";
         }
         else{
             turn="X";
@@ -68,11 +68,11 @@ public class Connect4Board extends Board {
             }
         }
 
-        if (turn.equals("X")){
-            turn="O";
+        if (turn.equals("R")){
+            turn="Y";
         }
-        else if (turn.equals("O")){
-            turn="X";
+        else if (turn.equals("Y")){
+            turn="R";
         }
     }
 
@@ -84,7 +84,7 @@ public class Connect4Board extends Board {
 
         for(int r = 0; r < theBoard.length; r++) {
             for(int c = 0; c < theBoard[0].length; c++) {
-                if(!theBoard[r][c].equals("X") && !theBoard[r][c].equals("O"))
+                if(!theBoard[r][c].equals("R") && !theBoard[r][c].equals("Y"))
                     empty.add((String) theBoard[r][c]);
             }
         }
@@ -101,7 +101,7 @@ public class Connect4Board extends Board {
 
         // check rows for streak
         for(int i = 0; i < getRows(); i++) {
-            if (streakInRow(i, player, 3) || streakInCol(i, player, 3))
+            if (streakInRow(i, player, 4) || streakInCol(i, player, 4))
                 return true;
         }
 
@@ -117,7 +117,7 @@ public class Connect4Board extends Board {
      */
     public boolean isGameOver() {
 
-        if(isWinner("X") || isWinner("O") || getEmptyLocs().size() == 0)
+        if(isWinner("R") || isWinner("Y") || getEmptyLocs().size() == 0)
             return true;
         else
             return false;
