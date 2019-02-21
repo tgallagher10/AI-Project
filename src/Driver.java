@@ -41,6 +41,10 @@ public class Driver {
                 p1=new HumanC4("R");
                 p2=new HumanC4("Y");
             }
+            else if (ans == 5){
+                p1 = new DumbAIC4("R");
+                p2 = new HumanC4("Y");
+            }
             }
 
 
