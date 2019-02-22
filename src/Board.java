@@ -124,7 +124,7 @@ public abstract class Board<E extends Comparable<E>> {
         int col = startCol;
 
 
-        while(row < theBoard.length - 1 && col < theBoard.length - 1) {
+        while(row < theBoard.length-1 && col < theBoard.length-1) {
             if(theBoard[row][col].equals(theBoard[row+1][col+1]) && theBoard[row][col].equals(piece))
                 times++;
 
