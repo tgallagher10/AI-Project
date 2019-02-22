@@ -12,6 +12,7 @@ public class DumbAIC4 extends Player {
 
     public String getMove(Board board){
         ArrayList<String> spots= getEmptyCols(board);
+        System.out.println(spots.toString());
 
         for (int i=0; i<spots.size(); i++){
             board.placePiece(spots.get(i), "R");
@@ -50,7 +51,7 @@ public class DumbAIC4 extends Player {
 
     public ArrayList<String> getEmptyCols(Board board){
         ArrayList<String> cols = new ArrayList<>();
-        for(int i = 0; i< board.getCols()-1;i++){
+        for(int i = 0; i< board.getCols();i++){
             if(board.get(0,i).equals("-")){
                 cols.add(Integer.toString(i+1));
             }
