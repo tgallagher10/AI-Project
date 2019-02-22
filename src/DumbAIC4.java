@@ -17,6 +17,7 @@ public class DumbAIC4 extends Player {
             board.placePiece(spots.get(i), "R");
             if (board.isWinner("R")){
                 board.retractPiece(spots.get(i));
+                System.out.println(spots.get(i));
                 return spots.get(i);
             }
             else{
@@ -28,6 +29,7 @@ public class DumbAIC4 extends Player {
             board.placePiece(spots.get(j), "Y");
             if (board.isWinner("Y")){
                 board.retractPiece(spots.get(j));
+                System.out.println(spots.get(j));
                 return spots.get(j);
             }
             else{
@@ -38,6 +40,8 @@ public class DumbAIC4 extends Player {
         Random r=new Random();
 
         int index=r.nextInt(spots.size());
+
+        System.out.println(spots.get(index));
 
         return spots.get(index);
 

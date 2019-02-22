@@ -9,7 +9,7 @@ public class DumbAI extends Player {
     }
 
     public String getMove(Board board){
-        ArrayList<String> spots=new ArrayList<>();
+        ArrayList<String> spots;
         spots=board.getEmptyLocs();
         for (int i=0; i<spots.size(); i++){
             board.placePiece(spots.get(i), "X");

@@ -87,6 +87,7 @@ public class Connect4Board extends Board {
      */
     public boolean isWinner(String player) {
 
+
         // check rows for streak
         for(int i = 0; i < getRows(); i++) {
             if (streakInRow(i, player, 4) || streakInCol(i, player, 4))
@@ -94,22 +95,23 @@ public class Connect4Board extends Board {
         }
         
 
-        for (int r=3; r<6; r++){
-            for (int c=0; c<=3; c++){
+        for (int r=0; r<6; r++){
+            for (int c=0; c<7; c++){
                 if (streakInNorthEastDiag(r,c,player,4)){
                     return true;
                 }
             }
         }
 
-        for (int r=0; r<3; r++){
-            for (int c=0; c<=3; c++){
+        for (int r=0; r<6; r++){
+            for (int c=0; c<7; c++){
                 if (streakInSouthEastDiag(r,c,player,4)){
                     return true;
                 }
             }
         }
-
+// south east diag doesn't work
+// northeast doesn't work as well
 
 
         return false;
