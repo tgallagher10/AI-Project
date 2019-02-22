@@ -52,9 +52,12 @@ public class Connect4Board extends Board {
     public void retractPiece(String loc) {
         int col = Integer.parseInt(loc)-1;
         for (int r = 0; r < ROWS; r++) {
-                if (!theBoard[r][col].equals("-"))
+                if (!theBoard[r][col].equals("-")){
                     theBoard[r][col] = "-";
-                    ///break;
+                    break;
+                }
+
+
             }
 
         if (turn.equals("R")){

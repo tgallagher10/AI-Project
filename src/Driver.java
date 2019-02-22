@@ -61,6 +61,7 @@ public class Driver {
 
             if (turn.equals("O") || turn.equals("Y")){
                 board.placePiece(p2.getMove(board), board.getTurn());
+                System.out.println(board.toString());
             }
 
 
